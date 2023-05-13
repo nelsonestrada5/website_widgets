@@ -2,27 +2,47 @@
 <html>
 <head>
     <style>
+        body, h3, p {
+            font-family: "Monaco", cursive, sans-serif; /* Make all the fonts Comic Sans. Other fonts: https://blog.hubspot.com/website/web-safe-html-css-fonts */
+        }
         .progress-bar {
             width: 100%;
-            background-color: #f3f3f3; /* Color of the unfilled part */
             border-radius: 15px;
             overflow: hidden;
         }
         .progress-bar-fill {
-            height: 30px;
-            line-height: 30px; /* Adjust as needed */
-            color: white; /* Color of the percentage text */
+            height: 20px; /* Make the progress bar line-height 20px */
+            line-height: 20px;
+            color: white;
             text-align: center;
             border-radius: 15px;
         }
     </style>
 </head>
 <body>
-    <h1>Your Title Here</h1> <!-- Add your title here -->
-    <div class="progress-bar">
-        <div class="progress-bar-fill" style="width: 50%; background: #008000;"> <!-- Update the width for the percentage fill and background for the color of the filled part -->
-            50% <!-- Update the percentage text -->
+    <h3 id="progress-bar-title">Your Title Here</h3>
+    <p id="progress-bar-percentage">Percentage sold: 50%</p> <!-- Added an id to this element for easier manipulation -->
+    <div class="progress-bar" id="progress-bar">
+        <div class="progress-bar-fill" id="progress-bar-fill" style="width: 50%;">
         </div>
     </div>
+
+    <script>
+        // Define your variables here
+        var fillColorStart = "#008000"; // Starting color of the filled part
+        var fillColorEnd = "pink"; // Ending color of the filled part
+        var unfilledColor = "#f3f3f3"; // Color of the unfilled part
+        var fillWidth = "70%"; // Width of the filled part
+
+        // Apply the variables to the elements
+        document.getElementById('progress-bar').style.backgroundColor = unfilledColor;
+        var progressBarFill = document.getElementById('progress-bar-fill');
+        progressBarFill.style.width = fillWidth;
+        // Make the progress bar fill into a gradient
+        progressBarFill.style.background = `linear-gradient(90deg, ${fillColorStart} 0%, ${fillColorStart} 66%, ${fillColorEnd} 100%)`;
+        
+        // Update progress bar percentage text
+        document.getElementById('progress-bar-percentage').innerText = `Percentage sold: ${fillWidth}`;
+    </script>
 </body>
 </html>
