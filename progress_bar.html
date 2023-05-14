@@ -2,6 +2,9 @@
 <html>
 <head>
     <style>
+        body {
+            background-color: #FFFFFF; /* Default background color */
+        }
         body, h3, p {
             font-family: "Monaco", cursive, sans-serif; /* Make all the fonts Comic Sans. Other fonts: https://blog.hubspot.com/website/web-safe-html-css-fonts */
         }
@@ -11,8 +14,8 @@
             overflow: hidden;
         }
         .progress-bar-fill {
-            height: 20px; /* Make the progress bar line-height 20px */
-            line-height: 20px;
+            height: 15px; 
+            line-height: 15px;
             color: white;
             text-align: center;
             border-radius: 15px;
@@ -20,7 +23,7 @@
     </style>
 </head>
 <body>
-    <h3 id="progress-bar-title">Your Title Here</h3>
+    <h3 id="progress-bar-title">Cupos Restantes</h3>
     <p id="progress-bar-percentage">Percentage sold: 50%</p> <!-- Added an id to this element for easier manipulation -->
     <div class="progress-bar" id="progress-bar">
         <div class="progress-bar-fill" id="progress-bar-fill" style="width: 50%;">
@@ -29,12 +32,16 @@
 
     <script>
         // Define your variables here
-        var fillColorStart = "#008000"; // Starting color of the filled part
-        var fillColorEnd = "pink"; // Ending color of the filled part
+        var fillColorStart = "#E8BE9C"; // Starting color of the filled part
+        var fillColorEnd = "#E9700E"; // Ending color of the filled part (red)
         var unfilledColor = "#f3f3f3"; // Color of the unfilled part
-        var fillWidth = "70%"; // Width of the filled part
+        var fillWidth = "60%"; // Width of the filled part
+        var fontColor = "#FFF"; // Font color
+        var backgroundColor = "#131B1E"; // Background color
 
         // Apply the variables to the elements
+        document.body.style.backgroundColor = backgroundColor;
+        document.body.style.color = fontColor;
         document.getElementById('progress-bar').style.backgroundColor = unfilledColor;
         var progressBarFill = document.getElementById('progress-bar-fill');
         progressBarFill.style.width = fillWidth;
