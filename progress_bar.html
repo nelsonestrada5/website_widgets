@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    <h3 id="progress-bar-title">Cupos Restantes</h3>
+    <h3 id="progress-bar-title">YOUR TITLE HERE</h3>
     <p id="progress-bar-percentage">Percentage sold: 50%</p> <!-- Added an id to this element for easier manipulation -->
     <div class="progress-bar" id="progress-bar">
         <div class="progress-bar-fill" id="progress-bar-fill" style="width: 50%;">
@@ -46,7 +46,7 @@
         var progressBarFill = document.getElementById('progress-bar-fill');
         progressBarFill.style.width = fillWidth;
         // Make the progress bar fill into a gradient
-        progressBarFill.style.background = `linear-gradient(90deg, ${fillColorStart} 0%, ${fillColorStart} 66%, ${fillColorEnd} 100%)`;
+        progressBarFill.style.background = `linear-gradient(90deg, ${fillColorStart} 0%, ${fillColorStart} 50%, ${fillColorEnd} 100%)`;
         
         // Update progress bar percentage text
         document.getElementById('progress-bar-percentage').innerText = `Percentage sold: ${fillWidth}`;
